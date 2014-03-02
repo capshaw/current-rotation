@@ -1,0 +1,123 @@
+$break-small: 500px;
+$break-large: 750px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+body {
+    background: #eee;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 1.2em;
+    margin-top: 40px;
+    margin-bottom: 0;
+    color: #333;
+}
+
+.content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.header {
+    $color: #2D3136;
+    background: #fff;
+    color: #333;
+    padding: 40px;
+    line-height: 1.4em;
+}
+
+.albums {
+    @include respond-to(handhelds) {
+        padding: 40px;
+    }
+
+    @include respond-to(medium-screens) {
+        padding: 40px;
+    }
+}
+
+.album {
+    width: 228px;
+    height: 228px;
+    margin-top: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+
+    @include respond-to(handhelds) {
+        width: 100%;
+    }
+
+    @include respond-to(medium-screens) {
+        width: 100%;
+    }
+
+    &:nth-child(3n + 1) {
+        margin-right: 0;
+    }
+
+    img {
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        width: 100%;
+        border: 10px solid #fff;
+    }
+
+    .info {
+        font-size: 0.9em;
+        color: #333;
+        padding: 5px;
+        font-weight: 300;
+
+        .artist-name {
+            letter-spacing: -1px;
+            font-weight: bold;
+        }
+    }
+}
+
+.footer {
+    color: #333;
+    margin-top: 40px;
+    background: #fff;
+    padding: 40px;
+    text-align: center;
+    font-weight: 300;
+
+    .rdio {
+        margin-top: 20px;
+    }
+}
+
+.loader {
+    background: url(../img/loader.gif) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+}

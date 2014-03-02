@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang='en' ng-app='rotation'>
+<head>
+    <meta charset='utf-8'>
+    <title>Music Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+    <link rel='stylesheet' type='text/css' href='css/index.css'>
+    <link rel='stylesheet' type='text/css' href='css/animate.css'>
+    <link rel='shortcut icon' href='img/icon.png'>
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <section ng-controller='RotationCtrl'>
+        <div class='loader' ng-hide='playlist||error'></div>
+        <div class='header'>
+            <div class='content'>
+                <h1>Music Dashboard</h1>
+                <p>
+                    You've stumbled upon a little dashboard I hacked together to show what I'm currently listening to! It's not much currently, but I hope to add more features, including integration of the last.fm API.
+                </p>
+                <p>- Andrew</p>
+            </div>
+        </div>
+        <div class='content albums' ng-show='playlist'>
+            <h2>Current Album Rotation</h2>
+            <div class='album animated fadeIn'
+                 ng-repeat='track in playlist.result.p7738868.tracks'>
+                <a href='http://rdio.com{{ track.albumUrl }}'>
+                    <img src='{{ track.icon400 }}'>
+                </a>
+                <div class='info'>
+                    <div class='album-name'>{{ track.album }}</div>
+                    <div class='artist-name'>{{ track.artist }}</div>
+                </div>
+            </div>
+        </div>
+        <div class='error' ng-show='error'>
+            Sorry, there seems to have been an error:
+            <span class='error-message'>{{ error_message }}</span>
+            If this error persists, let me know and I'll look into it!
+        </div>
+        <div class='footer' ng-show='playlist'>
+            API provided by<br>
+            <a href='http://rdio.com'>
+                <img src='img/rdio.png' alt='Rdio' width='100px' class='rdio'>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
