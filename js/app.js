@@ -18,9 +18,6 @@ rotation.controller('RotationCtrl', function RotationCtrl($scope, $http) {
     }).
     success(function(data, status, headers, config) {
         $scope.playlist = data;
-        setTimeout(function(){
-            $scope.show = true;
-        }, 1000);
     }).
     error(function(data, status, headers, config) {
         $scope.error = true;
