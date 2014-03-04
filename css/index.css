@@ -39,16 +39,21 @@ h2 {
   height: 228px;
   margin-top: 20px;
   margin-right: 20px;
-  display: inline-block;
-  border: 1px solid #ccc; }
+  display: inline-block; }
   @media only screen and (max-width: 500px) {
     .album {
-      width: 100%; } }
+      width: 100%;
+      height: auto; } }
   @media only screen and (min-width: 501px) and (max-width: 749px) {
     .album {
-      width: 100%; } }
+      width: 100%;
+      height: auto; } }
   .album:nth-child(3n + 1) {
     margin-right: 0; }
+  .album a {
+    display: block;
+    border: 1px solid #ccc;
+    line-height: 0; }
   .album img {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
