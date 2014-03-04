@@ -50,11 +50,11 @@ h2 {
 
 .albums {
     @include respond-to(handhelds) {
-        padding: 40px;
+        padding: 0 40px;
     }
 
     @include respond-to(medium-screens) {
-        padding: 40px;
+        padding: 0 40px;
     }
 }
 

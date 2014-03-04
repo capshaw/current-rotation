@@ -29,10 +29,10 @@ h2 {
 
 @media only screen and (max-width: 500px) {
   .albums {
-    padding: 40px; } }
+    padding: 0 40px; } }
 @media only screen and (min-width: 501px) and (max-width: 749px) {
   .albums {
-    padding: 40px; } }
+    padding: 0 40px; } }
 
 .album {
   width: 228px;
