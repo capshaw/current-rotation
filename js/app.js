@@ -11,16 +11,16 @@
 var api_url = 'http://api.capshaw.me/rdio/rotation/';
 var rotation = angular.module('rotation', []);
 
-rotation.controller('RotationCtrl', function RotationCtrl($scope, $http) {
+rotation.controller('RotationCtrl', function RotationCtrl($scope, $http, $timeout) {
     $http({
         method: 'GET',
         url: api_url
     }).
     success(function(data, status, headers, config) {
         $scope.playlist = data;
+        $scope.loaded = true;
     }).
     error(function(data, status, headers, config) {
         $scope.error = true;
-        $scope.error_message = status;
     });
 });

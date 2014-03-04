@@ -36,8 +36,28 @@ h2 {
 }
 
 .content {
-    max-width: 750px;
+    max-width: $break-large;
     margin: auto;
+}
+
+.error {
+    margin-top: 40px;
+
+    @include respond-to(handhelds) {
+        padding: 0 40px;
+    }
+
+    @include respond-to(medium-screens) {
+        padding: 0 40px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .header {

@@ -36,10 +36,9 @@
                 </div>
             </div>
         </div>
-        <div class='error' ng-show='error'>
-            Sorry, there seems to have been an error:
-            <span class='error-message'>{{ error_message }}</span>
-            If this error persists, let me know and I'll look into it!
+        <div class='error content' ng-show='error'>
+            <h2>Opps, everything broke.</h2>
+            <p>Try reloading the page to see if that fixes it. If this error persists, let me know and I'll look into it!</p>
         </div>
         <div class='footer' ng-show='playlist'>
             API provided by<br>
