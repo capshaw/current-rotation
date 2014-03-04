@@ -28,7 +28,7 @@
             <div class='album animated fadeIn'
                  ng-repeat='track in playlist.result.p7738868.tracks'>
                 <a href='http://rdio.com{{ track.albumUrl }}'>
-                    <img src='{{ track.icon400 }}' alt='{{ track.album }} by {{ track.artist}}'>
+                    <img ng-src='{{ track.icon400 }}' alt='{{ track.album }} by {{ track.artist}}'>
                 </a>
                 <div class='info'>
                     <div class='album-name'>{{ track.album }}</div>
